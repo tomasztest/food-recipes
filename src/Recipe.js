@@ -13,10 +13,14 @@ const Recipe = ({ title, calories, image, ingredients, totalWeight }) => {
           </li>
         ))}
       </ol>
-      <p>{calories.toFixed(0)} kcal</p>
-      <p>{totalWeight.toFixed(2)}g</p>
-      <p>{((calories / totalWeight) * 100).toFixed(2)} kcal/100g</p>
-      <img className={style.image} src={image} alt={title} />
+      <div className={style.details}>
+        <ul>
+          <li>{calories.toFixed(0)} kcal</li>
+          <li>{totalWeight.toFixed(2)}g</li>
+          <li>{((calories / totalWeight) * 100).toFixed(2)} kcal/100g</li>
+        </ul>
+        <img className={style.image} src={image} alt={title} />
+      </div>
     </div>
   );
 };
